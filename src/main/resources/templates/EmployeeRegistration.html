@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+<h1> Employee Registration</h1>
+<form  action="registration" th:object="${employeeDetails}">
+<input placeholder="Enter Employee name" th:field="*{empname}">
+<br>
+<p th:text="${invalidmsg != null ? invalidmsg['empemailid']: ''}"></p>
+
+<input placeholder="Enter Employee EmailId" th:field="*{empemailid}">
+<br>
+<p th:text="${invalidmsg!=null ? invalidmsg['mobilenumber']:''}"></p>
+<input placeholder="Enter Employee Mobile number" th:field="*{mobilenumber}">
+<br>
+<input placeholder="Enter Employee gender" th:field="*{gender}">
+<br>
+<input placeholder="Enter Employee address" th:field="*{address}">
+<br>
+<input placeholder="Enter Employee salary" th:field="*{salary}">
+<br>
+<input placeholder="Enter employee deptno" th:field="*{deptno}">
+<br>
+<input type="submit">
+
+</form>
+</center>
+
+</body>
+</html>

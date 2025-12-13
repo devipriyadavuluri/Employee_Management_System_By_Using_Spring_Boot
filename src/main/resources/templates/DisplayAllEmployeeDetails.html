@@ -1,0 +1,43 @@
+<table border="1">
+
+    <tr>
+        <th>Employee id</th>
+        <th>Employee Name</th>
+        <th>Employee EmailId</th>
+        <th>Employee Mobile number</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Salary</th>
+        <th>Dept No</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+    <tr th:each="employee : ${allemployeedetails}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.empname}"></td>
+        <td th:text="${employee.empemailid}"></td>
+        <td th:text="${employee.mobilenumber}"></td>
+        <td th:text="${employee.gender}"></td>
+        <td th:text="${employee.address}"></td>
+        <td th:text="${employee.salary}"></td>
+        <td th:text="${employee.deptno}"></td>
+
+        <!-- Update Button -->
+        <td>
+            <form action="updatebyid">
+                <input type="hidden" th:value="${employee.id}" name="empid">
+                <input type="submit" value="Update">
+            </form>
+        </td>
+
+        <!-- Delete Button -->
+        <td>
+            <form action="deletebyid">
+                <input type="hidden" th:value="${employee.id}" name="empid">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+    </tr>
+
+</table>
